@@ -5,9 +5,8 @@
 
  Execute the trigger needed to popluate the tables. As of right now there are two triggers, one in the "playerTransaction folder" and the other in "teamStats" folder. Please execute both. After that insert the data for each folder that located in their respective folder. 
 
- created a new user for the database called adminUser which it creation is located in the "User" folder and is the user we would be connecting in the JDBC code.
+ In the BaseballApp.java file, there is a line with "jdbc:sqlserver:<Insert Database Name>;". This should be line 6.
+ Replace "jdbc:sqlserver:<Insert Database Name>;" with the name of your database so that the code can connect to it properly.
+
+ create a new user for the database called adminUser which it creation is located in the "User" folder and is the user we would be connecting in the JDBC code.
 Make sure you have the correct crosspath  and JSON information for the database to work.
-
-
- I have all my methods randomly on each submenus to test  to see if the submenus worked. All of mines are suppose to be under the stats management.
- Just add your method to the switch structure.
