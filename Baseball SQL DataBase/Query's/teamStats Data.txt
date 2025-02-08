@@ -1,0 +1,58 @@
+
+
+--Created a trigger to that for every game added it updates teamStats
+
+create trigger UpdateTeamStats
+on games
+after insert
+as
+begin
+    merge teamStats as target
+    using (
+        select 
+            g.teamID,
+            YEAR(g.date) as year,
+            count(*) as wins
+        from (
+            select homeTeam as teamID, date
+            from inserted
+            where homeTeamScore > awayTeamScore
+            union all
+            select awayTeam as teamID, date
+            from inserted
+            where awayTeamScore > homeTeamScore
+        ) as g
+        group by g.teamID, YEAR(g.date)
+    ) as source
+    on target.teamID = source.teamID and target.year = source.year
+    when matched then
+        update set wins = target.wins + source.wins
+    when not matched then
+        insert (teamID, year, wins, losses) values (source.teamID, source.year, source.wins, 0);
+
+    merge teamStats as target
+    using (
+        select 
+            g.teamID,
+            YEAR(g.date) as year,
+            count(*) as losses
+        from (
+            select homeTeam as teamID, date
+            from inserted
+            where homeTeamScore < awayTeamScore
+            union all
+            select awayTeam as teamID, date
+            from inserted
+            where awayTeamScore < homeTeamScore
+        ) as g
+        group by g.teamID, YEAR(g.date)
+    ) as source
+    on target.teamID = source.teamID and target.year = source.year
+    when matched then
+        update set losses = target.losses + source.losses
+    when not matched then
+        insert (teamID, year, wins, losses) values (source.teamID, source.year, 0, source.losses);
+end;
+
+
+

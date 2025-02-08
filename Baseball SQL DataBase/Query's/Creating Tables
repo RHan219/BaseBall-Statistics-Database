@@ -1,0 +1,105 @@
+-- All the tables for the Database
+
+-- team's table
+create table team(
+teamID int identity(0, 1) not null,
+teamName varchar(30) not null,
+teamAbbreviation varchar(5) not null,
+city varchar(30),
+stadium varchar(30) not null,
+constraint unique_teamName unique(teamName),
+constraint unique_teamAbbreviation unique(teamAbbreviation),
+primary key (teamID),
+);
+
+-- add indexes for team names or abbreviations
+create index teamName_index on team(teamName);
+create index teamAbbreviation_index on team(teamAbbreviation);
+
+-- player's Table
+create table player(
+playerID int identity(0, 1) not null,
+firstName varchar(30) not null,
+lastName varchar(30) not null,
+teamID int,
+position varchar(30),
+salary int,
+jerseyNumber int,
+status varchar(10) not null,
+check (status in ('active', 'injured', 'suspended', 'inactive', 'retired')),
+primary key (playerID),
+foreign key (teamID) references team(teamID),
+);
+
+-- add indexes for player's first and last names
+create index playerFirstName_index on player(firstName);
+create index playerLastName_index on player(lastName);
+
+-- playerTransaction's Table
+create table playerTransaction(
+playerID int not null,
+date date not null,
+originalTeam int not null,
+newTeam int not null,
+primary key (playerID, date),
+foreign key (playerID) references player(playerID),
+foreign key (originalTeam) references team(teamID),
+foreign key (newTeam) references team(teamID),
+);
+
+-- games's table
+create table games(
+gameID int identity (0, 1) not null,
+homeTeam int not null,
+awayTeam int not null,
+date date not null,
+homeTeamScore int not null,
+awayTeamScore int not null,
+primary key (gameID),
+foreign key (homeTeam) references team(teamID),
+foreign key (awayTeam) references team(teamID),
+);
+
+--teamStats's table
+create table teamStats(
+teamID int not null,
+year int not null,
+wins int not null,
+losses int not null,
+primary key (teamID, year),
+foreign key (teamID) references team(teamID),
+);
+
+-- pitchingStats table
+create table pitchingStats(
+playerID int not null,
+gameID int not null,
+strikes int,
+strikeOuts int,
+pc int,
+ip numeric(4,1),
+hits int,
+walks int,
+primary key (playerID, gameID),
+foreign key (playerID) references player(playerID),
+foreign key (gameID) references games(gameID),
+);
+
+-- battingStats table
+create table battingStats(
+playerID int not null,
+gameID int not null,
+atBat int,
+rbi int,
+strikeouts int,
+hr int,
+pa int,
+hits int,
+singles int,
+doubles int,
+triples int,
+primary key (playerID, gameID),
+foreign key (playerID) references player(playerID),
+foreign key (gameID) references games(gameID),
+);
+

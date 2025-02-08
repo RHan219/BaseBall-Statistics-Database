@@ -1,0 +1,89 @@
+-- Players for New York Yankees
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Aaron', 'Judge', 0, 'Outfielder', 35000000, 99, 'active'),
+('Gerrit', 'Cole', 0, 'Pitcher', 36000000, 45, 'active'),
+('Giancarlo', 'Stanton', 0, 'Designated Hitter', 32000000, 27, 'injured'),
+('Anthony', 'Rizzo', 0, 'First Baseman', 20000000, 48, 'active'),
+('DJ', 'LeMahieu', 0, 'Infielder', 0, 26, 'retired');
+
+-- Players for Houston Astros
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Jose', 'Altuve', 1, 'Second Baseman', 29000000, 27, 'active'),
+('Alex', 'Bregman', 1, 'Third Baseman', 28000000, 2, 'active'),
+('Kyle', 'Tucker', 1, 'Outfielder', 24000000, 30, 'injured'),
+('Yordan', 'Alvarez', 1, 'Outfielder', 21000000, 44, 'active'),
+('Lance', 'McCullers', 1, 'Pitcher', 17000000, 43, 'suspended');
+
+-- Players for Los Angeles Dodgers
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Mookie', 'Betts', 2, 'Outfielder', 35000000, 50, 'active'),
+('Freddie', 'Freeman', 2, 'First Baseman', 33000000, 5, 'active'),
+('Clayton', 'Kershaw', 2, 'Pitcher', 0, 22, 'retired'),
+('Max', 'Muncy', 2, 'Infielder', 15000000, 13, 'active'),
+('Julio', 'Urias', 2, 'Pitcher', 12000000, 7, 'inactive');
+
+-- Players for Cleveland Guardians
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values
+('Jose', 'Ramirez', 3, 'Third Baseman', 23000000, 11, 'active'),
+('Shane', 'Bieber', 3, 'Pitcher', 22000000, 57, 'active'),
+('Andres', 'Gimenez', 3, 'Infielder', 18000000, 0, 'active'),
+('Steven', 'Kwan', 3, 'Outfielder', 16000000, 38, 'suspended'),
+('Triston', 'McKenzie', 3, 'Pitcher', 10000000, 24, 'injured');
+
+-- Players for Philadelphia Phillies
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values
+('Bryce', 'Harper', 4, 'Outfielder', 33000000, 3, 'active'),
+('Trea', 'Turner', 4, 'Shortstop', 32000000, 7, 'active'),
+('Kyle', 'Schwarber', 4, 'Outfielder', 25000000, 12, 'inactive'),
+('Aaron', 'Nola', 4, 'Pitcher', 20000000, 27, 'active'),
+('Zack', 'Wheeler', 4, 'Pitcher', 18000000, 45, 'injured');
+
+-- Players for Milwaukee Brewers
+INSERT INTO player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Christian', 'Yelich', 5, 'Outfielder', 26000000, 22, 'active'),
+('Corbin', 'Burnes', 5, 'Pitcher', 19000000, 39, 'active'),
+('Brandon', 'Woodruff', 5, 'Pitcher', 17000000, 53, 'injured'),
+('Willy', 'Adames', 5, 'Shortstop', 16000000, 27, 'active'),
+('Rowdy', 'Tellez', 5, 'First Baseman', 0, 11, 'retired');
+
+-- Players for Baltimore Orioles
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+VALUES 
+('Adley', 'Rutschman', 6, 'Catcher', 17000000, 35, 'active'),
+('Cedric', 'Mullins', 6, 'Outfielder', 16000000, 31, 'active'),
+('Anthony', 'Santander', 6, 'Outfielder', 14000000, 25, 'injured'),
+('Gunnar', 'Henderson', 6, 'Infielder', 13000000, 2, 'active'),
+('Kyle', 'Bradish', 6, 'Pitcher', 10000000, 39, 'suspended');
+
+-- Players for Kansas City Royals
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Salvador', 'Perez', 7, 'Catcher', 20000000, 13, 'active'),
+('Bobby', 'Witt Jr.', 7, 'Shortstop', 18000000, 7, 'active'),
+('MJ', 'Melendez', 7, 'Catcher', 16000000, 1, 'injured'),
+('Brady', 'Singer', 7, 'Pitcher', 14000000, 51, 'active'),
+('Vinnie', 'Pasquantino', 7, 'First Baseman', 0, 9, 'retired');
+
+-- Players for Seattle Mariners
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values 
+('Julio', 'Rodriguez', 8, 'Outfielder', 30000000, 44, 'active'),
+('Luis', 'Castillo', 8, 'Pitcher', 25000000, 58, 'active'),
+('Eugenio', 'Suarez', 8, 'Infielder', 20000000, 28, 'active'),
+('Ty', 'France', 8, 'First Baseman', 15000000, 23, 'injured'),
+('Cal', 'Raleigh', 8, 'Catcher', 12000000, 29, 'inactive');
+
+-- Players for Atlanta Braves
+insert into player (firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values
+('Ronald', 'Acuña Jr.', 9, 'Outfielder', 28000000, 13, 'active'),
+('Matt', 'Olson', 9, 'First Baseman', 27000000, 28, 'active'),
+('Austin', 'Riley', 9, 'Third Baseman', 25000000, 27, 'active'),
+('Max', 'Fried', 9, 'Pitcher', 22000000, 54, 'injured'),
+('Spencer', 'Strider', 9, 'Pitcher', 20000000, 65, 'suspended');

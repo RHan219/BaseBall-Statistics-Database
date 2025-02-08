@@ -1,0 +1,7 @@
+CREATE LOGIN adminUser
+WITH PASSWORD = '45BaseBall!@#054';
+
+USE [Baseball League ]; -- Replace with your database name
+CREATE USER adminUser FOR LOGIN adminUser;
+
+ALTER ROLE db_owner ADD MEMBER adminUser; -- Full access to the database

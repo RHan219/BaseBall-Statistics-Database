@@ -1,0 +1,18 @@
+-- alter table for pa to be an int 
+insert into battingStats (playerID, gameID, atBat, rbi, strikeouts, hr, pa, hits, singles, doubles, triples)
+select
+    p.playerID,
+    g.gameID,
+    abs(checksum(NEWID())) % 5 + 3 as atBat, 
+    abs(checksum(NEWID())) % 4 + 1 as rbi, 
+    abs(checksum(NEWID())) % 3 + 0 as strikeouts, 
+    case when abs(checksum(NEWID())) % 10 < 2 then 1 else 0 end as hr, 
+    abs(checksum(NEWID())) % 5 + abs(checksum(NEWID())) % 3 + 3 as pa, 
+    abs(checksum(NEWID())) % 4 + 1 as hits, 
+    abs(checksum(NEWID())) % 3 + 1 as singles, 
+    case when abs(checksum(NEWID())) % 5 < 2 then 1 else 0 end as doubles, 
+    case when abs(checksum(NEWID())) % 15 = 0 then 1 else 0 END as triples 
+from player p
+inner join games g on p.teamID = g.homeTeam or p.teamID = g.awayTeam
+where p.position <> 'Pitcher' 
+and g.gameID between 0 and 10;

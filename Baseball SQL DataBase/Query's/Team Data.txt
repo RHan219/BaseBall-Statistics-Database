@@ -1,0 +1,73 @@
+insert into team (teamName, teamAbbreviation, city, stadium)
+values 
+    ('New York Yankees', 'NYY', 'New York', 'Yankee Stadium'),
+    ('Houston Astros', 'HOU', 'Houston', 'Daikin Park'),
+    ('Los Angeles Dodgers', 'LAD', 'Los Angeles', 'Dodger Stadium'),
+    ('Cleveland Guardians', 'CLE', 'Cleveland', 'Progressive Field'),
+    ('Philadelphia Phillies', 'PHI', 'Philadelphia', 'Citizens Bank Park'),
+    ('Milwaukee Brewers', 'MIL', 'Milwaukee', 'American Family Field'),
+    ('Baltimore Orioles', 'BAL', 'Baltimore', 'Camden Yards'),
+    ('Kansas City Royals', 'KC', 'Kansas City', 'Kauffman Stadium'),
+    ('Seattle Mariners', 'SEA', 'Seattle', 'T-Mobile Park'),
+    ('Atlanta Braves', 'ATL', 'Atlanta', 'Truist Park');
+
+
+// NOTE: Don't execute the code below
+// These are extras teams if we need them
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Chicago Cubs', 'CHC', 'Chicago', 'Wrigley Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('San Diego Padres', 'SD', 'San Diego', 'Petco Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Arizona Diamondbacks', 'ARI', 'Phoenix', 'Chase Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Boston Red Sox', 'BOS', 'Boston', 'Fenway Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Chicago White Sox', 'CWS', 'Chicago', 'Guaranteed Rate Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Cincinnati Reds', 'CIN', 'Cincinnati', 'Great American Ball Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Colorado Rockies', 'COL', 'Denver', 'Coors Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Detroit Tigers', 'DET', 'Detroit', 'Comerica Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Miami Marlins', 'MIA', 'Miami', 'loanDepot park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Minnesota Twins', 'MIN', 'Minneapolis', 'Target Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('New York Mets', 'NYM', 'New York', 'Citi Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Oakland Athletics', 'OAK', 'Oakland', 'Oakland Coliseum');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Pittsburgh Pirates', 'PIT', 'Pittsburgh', 'PNC Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('San Francisco Giants', 'SF', 'San Francisco', 'Oracle Park');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('St. Louis Cardinals', 'STL', 'St. Louis', 'Busch Stadium');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Tampa Bay Rays', 'TB', 'St. Petersburg', 'Tropicana Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Texas Rangers', 'TEX', 'Arlington', 'Globe Life Field');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Toronto Blue Jays', 'TOR', 'Toronto', 'Rogers Centre');
+
+insert into team(teamName, teamAbbreviation, city, stadium)
+	values('Washington Nationals', 'WSH', 'Washington', 'Nationals Park');

@@ -1,0 +1,68 @@
+CREATE PROCEDURE GetPlayersByTeam
+    @TeamID INT
+AS
+BEGIN
+    -- Select players from the specified team
+    SELECT 
+        playerID, 
+        firstName, 
+        lastName, 
+        position, 
+        salary, 
+        status
+    FROM 
+        player
+    WHERE 
+        teamID = @TeamID;
+END;
+
+
+create or alter procedure createNewTeam
+@teamName varchar(30),
+@teamAbbreviation varchar(5),
+@city varchar(30),
+@stadium varchar(30),
+@teamID int output
+as
+begin
+insert into team(teamName, teamAbbreviation, city, stadium)
+values (@teamName, @teamAbbreviation, @city, @stadium);
+
+select @teamID = scope_identity();
+end;
+
+
+create or alter procedure createNewPlayer
+@firstName varchar(30),
+@lastName varchar(30),
+@teamID int,
+@position varchar(30),
+@salary int,
+@jerseyNumber int,
+@status varchar(10),
+@playerID int output
+as
+begin
+insert into player(firstName, lastName, teamID, position, salary, jerseyNumber, status)
+values (@firstName, @lastName, @teamID, @position, @salary, @jerseyNumber, @status);
+
+select @playerID = scope_identity();
+end;
+
+
+create or alter procedure logGame
+@homeTeam int,
+@awayTeam int,
+@date date,
+@homeTeamScore int,
+@awayTeamScore int,
+@gameID int output
+
+as
+begin
+insert into games(homeTeam, awayTeam, date, homeTeamScore, awayTeamScore)
+values (@homeTeam, @awayTeam, @date, @homeTeamScore, @awayTeamScore);
+
+select @gameID = scope_identity();
+
+end;
